@@ -15,7 +15,7 @@ A full-stack web application for optimizing antenna designs using evolutionary a
 
 ### Simulation Capabilities
 - **Analytical Models**: Fast approximate EM models for quick fitness evaluation (~1ms)
-- **Meep FDTD Integration** (⭐ NEW): Real 3D FDTD electromagnetic simulations with CST/HFSS-grade accuracy
+- **Meep FDTD Integration**: Real 3D FDTD electromagnetic simulations with CST/HFSS-grade accuracy
   - Full 3D FDTD simulation using MIT's Meep
   - Real S11 curve extraction
   - Gain and radiation pattern calculation
