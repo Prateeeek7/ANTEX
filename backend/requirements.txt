@@ -1,0 +1,29 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+pydantic==2.5.0
+pydantic-settings==2.1.0
+pydantic[email]==2.5.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+numpy==1.26.2
+scipy==1.11.4
+deap==1.4.1
+pytest==7.4.3
+pytest-asyncio==0.21.1
+email-validator==2.1.0
+pydantic[email]==2.5.0
+# Meep FDTD integration
+matplotlib==3.8.2
+scikit-rf==1.9.0
+h5py==3.10.0
+numpy-stl==3.1.0
+reportlab==4.0.7
+# Note: Meep is installed via system package manager (brew/apt) or conda
+# For Docker, it's installed in the Dockerfile
+# For local Mac: brew install meep
+# For pip: pip install meep (may require compilation)
+

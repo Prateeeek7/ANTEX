@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(to bottom right, #f5f6f5 0%, rgba(196, 200, 176, 0.2) 50%, rgba(155, 168, 155, 0.1) 100%);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Primary Button - Professional Teal */
+  .btn-primary {
+    @apply px-6 py-3 text-white font-semibold rounded-lg transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+    background: linear-gradient(to right, #3a606e, #607b7d);
+    box-shadow: 0 2px 15px -3px rgba(58, 96, 110, 0.08), 0 10px 20px -2px rgba(58, 96, 110, 0.04);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(to right, #607b7d, #7a9ba0);
+    box-shadow: 0 4px 20px -2px rgba(58, 96, 110, 0.12), 0 8px 16px -4px rgba(58, 96, 110, 0.08);
+  }
+
+  /* Secondary Button - Sage Green */
+  .btn-secondary {
+    @apply px-6 py-3 bg-white font-semibold rounded-lg transform hover:-translate-y-0.5 transition-all duration-300 border;
+    color: #3a606e;
+    border-color: rgba(155, 168, 155, 0.5);
+    box-shadow: 0 2px 15px -3px rgba(58, 96, 110, 0.08), 0 10px 20px -2px rgba(58, 96, 110, 0.04);
+  }
+  
+  .btn-secondary:hover {
+    border-color: #828e82;
+    background-color: rgba(196, 200, 176, 0.1);
+    box-shadow: 0 4px 20px -2px rgba(58, 96, 110, 0.12), 0 8px 16px -4px rgba(58, 96, 110, 0.08);
+  }
+
+  /* Card Component - Clean White with Soft Shadow */
+  .card {
+    @apply bg-white rounded-xl transition-all duration-300 p-6 border;
+    border-color: rgba(245, 246, 245, 0.8);
+    box-shadow: 0 2px 15px -3px rgba(58, 96, 110, 0.08), 0 10px 20px -2px rgba(58, 96, 110, 0.04);
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 20px -2px rgba(58, 96, 110, 0.12), 0 8px 16px -4px rgba(58, 96, 110, 0.08);
+  }
+
+  /* Input Field - Professional Styling */
+  .input-field {
+    @apply w-full px-4 py-3 border rounded-lg focus:ring-2 transition-all duration-200 bg-white font-medium;
+    border-color: rgba(155, 168, 155, 0.5);
+    color: #3a606e;
+  }
+  
+  .input-field::placeholder {
+    color: #828e82;
+  }
+  
+  .input-field:focus {
+    --tw-ring-color: #607b7d;
+    border-color: #607b7d;
+    outline: none;
+  }
+
+  /* Remove spinner arrows from number inputs */
+  .input-field[type="number"]::-webkit-inner-spin-button,
+  .input-field[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .input-field[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Badge/Tag Component */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border;
+  }
+
+  .badge-primary {
+    background-color: rgba(96, 123, 125, 0.1);
+    color: #3a606e;
+    border-color: rgba(96, 123, 125, 0.2);
+  }
+
+  .badge-secondary {
+    background-color: rgba(130, 142, 130, 0.1);
+    color: #6b7a6b;
+    border-color: rgba(130, 142, 130, 0.2);
+  }
+
+  .badge-accent {
+    background-color: rgba(170, 174, 142, 0.2);
+    color: #3a606e;
+    border-color: rgba(170, 174, 142, 0.3);
+  }
+
+  /* Navigation Link Active State */
+  .nav-link {
+    @apply inline-flex items-center px-4 py-2 border-b-2 text-sm font-medium transition-all duration-200;
+  }
+
+  .nav-link-active {
+    border-color: #607b7d;
+    color: #3a606e;
+  }
+
+  .nav-link-inactive {
+    border-color: transparent;
+    color: #6b7a6b;
+  }
+  
+  .nav-link-inactive:hover {
+    border-color: rgba(155, 168, 155, 0.5);
+    color: #3a606e;
+  }
+}
