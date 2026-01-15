@@ -283,7 +283,7 @@ The system now supports **real 3D FDTD electromagnetic simulations** using Meep 
 - Multi-objective optimization
 - Automated design rule checking
 
--Pratik Kumar and Team
+-Pratik Kumar
 
 
 
