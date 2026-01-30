@@ -61,6 +61,22 @@ Alternative to Render:
 4. Link `DATABASE_URL` from PostgreSQL
 5. Add `VITE_API_URL` to your Vercel frontend pointing to Railway URL
 
+## Troubleshooting
+
+### 404 on Vercel (SPA routes)
+
+If you get `404: NOT_FOUND` when visiting the app or refreshing:
+
+1. **Root Directory:** In Vercel → Project Settings → General → **Root Directory**
+   - Set to **empty** or `.` (repo root) so `vercel.json` at the root is used, **or**
+   - Set to `frontend` — then `frontend/vercel.json` applies
+2. **Redeploy** after any change.
+3. Both `vercel.json` files include SPA rewrites so routes like `/projects/1` serve `index.html`.
+
+### CORS errors
+
+If the frontend can't reach the backend, add `CORS_ORIGINS` on Render with your exact Vercel URL.
+
 ## Notes
 
 - **Meep FDTD** is disabled in cloud (`USE_MEEP=false`) due to large dependencies. Analytical models are used.
