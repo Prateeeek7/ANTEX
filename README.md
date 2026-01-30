@@ -13,25 +13,39 @@ ANTEX (Antenna Design & Simulation Platform) is an industry-grade antenna design
 
 ## Design Workflow Flowchart
 
-The ANTEX design workflow follows these steps:
-
 ```mermaid
-flowchart TD
-    A[1. User Input - New Project] --> B[2. Project Parameters Stored]
-    B --> C[3. Optimization Request]
-    C --> D[4. Parameter Space Definition]
-    D --> E[5. Algorithm Initialization - GA/PSO]
-    E --> F[6. For Each Candidate]
-    F --> G[6a. Geometry Parameters → Analytical Models]
-    G --> H[6b. Calculate: Frequency, Bandwidth, Gain, Impedance]
-    H --> I[6c. Compute Fitness Score]
-    I --> J[7. Algorithm Evolution]
-    J --> K[8. Best Candidate Selected]
-    K --> L[9. Detailed Metrics Computed]
-    L --> M[10. Results Stored]
-    M --> N[11. RF Analysis - S-parameters, Smith Chart]
-    N --> O[12. Field Visualization - if Meep available]
-    O --> P[13. Report Generation - PDF]
+flowchart TB
+    subgraph Setup["Project setup"]
+        A([Create Project])
+        B[Define: frequency, bandwidth, substrate]
+        C[Select antenna shape & algorithm]
+        A --> B --> C
+    end
+
+    subgraph Optimize["Optimization loop"]
+        D[Initialize population]
+        E[Evaluate candidate]
+        F[Analytical models: freq, BW, gain, Z]
+        G[Compute fitness]
+        H{More generations?}
+        I[GA: crossover, mutation / PSO: velocity update]
+        D --> E --> F --> G --> H
+        H -->|Yes| I --> E
+    end
+
+    subgraph Results["Results & analysis"]
+        J[Select best candidate]
+        K[Store results]
+        L[RF analysis: Smith Chart, VSWR, S11]
+        M[Field viz & PDF report]
+        H -->|No| J --> K --> L --> M
+    end
+
+    C --> D
+
+    style Setup fill:#e8f4f8
+    style Optimize fill:#fff4e6
+    style Results fill:#e8f8e8
 ```
 
 ## Screenshots from Report
