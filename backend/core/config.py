@@ -3,8 +3,17 @@ from typing import Optional
 
 
 class Settings(BaseSettings):
-    # Database
+    # Database (Render/Railway use DATABASE_URL)
+    DATABASE_URL: Optional[str] = None
     DB_URL: str = "sqlite:///./antenna_designer.db"
+
+    @property
+    def effective_db_url(self) -> str:
+        url = self.DATABASE_URL or self.DB_URL
+        # Render/Neon use postgres://, SQLAlchemy needs postgresql://
+        if url.startswith("postgres://"):
+            url = "postgresql://" + url[10:]
+        return url
     
     # JWT
     JWT_SECRET: str = "your-secret-key-change-in-production"
@@ -17,7 +26,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "ANTEX"
     VERSION: str = "1.0.0"
     
-    # CORS
+    # CORS (comma-separated; add your Vercel URL for production)
     CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
     
     # Meep FDTD Integration

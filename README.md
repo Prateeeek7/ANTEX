@@ -2,6 +2,8 @@
 
 ANTEX (Antenna Design & Simulation Platform) is an industry-grade antenna design and optimization system that combines analytical electromagnetic models, FDTD simulations, and AI-powered optimization algorithms to design and analyze microstrip patch antennas. It uses Genetic Algorithms (GA) and Particle Swarm Optimization (PSO) to find optimal antenna geometries.
 
+**[Live Demo →](https://antexantennadesigner-5a371wh3b-pratik2002singh-3860s-projects.vercel.app)**
+
 ## Features
 
 - **Multiple antenna shapes:** Rectangular patch, star patch, meandered line, ring patch  
@@ -67,6 +69,8 @@ Impedance matching suggestions and design improvements.
 
 ## Quick Start
 
+**Try it online:** [Live on Vercel](https://antexantennadesigner-5a371wh3b-pratik2002singh-3860s-projects.vercel.app)
+
 ### Prerequisites
 - Docker & Docker Compose  
 - (Optional) Python 3.10+, Node.js 18+ for local development  
@@ -112,6 +116,7 @@ npm run dev
 - **[TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)** – Full technical documentation, formulas, and architecture  
 - **[FEATURES.md](FEATURES.md)** – Feature list and status  
 - **[Report/ANTEX_Paper.pdf](Report/ANTEX_Paper.pdf)** – IEEE conference paper  
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** – Deploy backend (Render) + connect to Vercel frontend  
 
 ## License
 
