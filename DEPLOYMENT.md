@@ -6,6 +6,32 @@
 - **Backend:** Render / Railway (FastAPI)
 - **Database:** PostgreSQL (Render/Railway managed)
 
+---
+
+## Fresh Vercel Deploy (e.g. after deleting project)
+
+To redeploy from scratch and keep `antexantennadesigner.vercel.app`:
+
+1. **Delete** the existing project: Vercel Dashboard → Project Settings → General → scroll down → **Delete Project**.
+
+2. **Create new project:** [vercel.com/new](https://vercel.com/new) → **Import** your `Prateeeek7/ANTEX` repo.
+
+3. **Configure (important):**
+   - **Project Name:** `antexantennadesigner` (so you get antexantennadesigner.vercel.app)
+   - **Root Directory:** Leave **empty** (do not set `frontend`)
+   - **Framework Preset:** Other
+   - **Build Command:** (leave default – uses `vercel.json`)
+   - **Output Directory:** (leave default – uses `vercel.json`)
+
+4. **Environment Variables:**
+   - `VITE_API_URL` = `https://antex-backend.onrender.com`
+
+5. Click **Deploy**.
+
+6. **Custom domain (if needed):** Project Settings → Domains → add `antexantennadesigner.vercel.app` if it doesn’t appear automatically.
+
+---
+
 ## 1. Deploy Backend (Render)
 
 1. Go to [render.com](https://render.com) and sign in with GitHub.
