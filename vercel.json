@@ -6,9 +6,7 @@
     { "source": "/favicon.ico", "destination": "/vite.svg", "permanent": false },
     { "source": "/favicon.png", "destination": "/vite.svg", "permanent": false }
   ],
-  "rewrites": {
-    "fallback": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
