@@ -2,10 +2,9 @@
   "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
   "installCommand": "cd frontend && npm install",
-  "rewrites": [
-    {
-      "source": "/((?!assets|api|favicon|vite|LOGO|.*\\.(js|css|ico|png|svg|jpg|jpeg|gif|webp|woff2?|ttf|json|map)).*)",
-      "destination": "/index.html"
-    }
-  ]
+  "rewrites": {
+    "fallback": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  }
 }

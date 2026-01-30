@@ -1,8 +1,7 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!assets|api|favicon|vite|LOGO|.*\\.(js|css|ico|png|svg|jpg|jpeg|gif|webp|woff2?|ttf|json|map)).*)",
-      "destination": "/index.html"
-    }
-  ]
+  "rewrites": {
+    "fallback": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  }
 }
