@@ -67,11 +67,11 @@ Alternative to Render:
 
 If you get `404: NOT_FOUND` when visiting the app or refreshing:
 
-1. **Root Directory:** In Vercel → Project Settings → General → **Root Directory**
-   - Set to **empty** or `.` (repo root) so `vercel.json` at the root is used, **or**
-   - Set to `frontend` — then `frontend/vercel.json` applies
-2. **Redeploy** after any change.
-3. Both `vercel.json` files include SPA rewrites so routes like `/projects/1` serve `index.html`.
+1. **Root Directory:** Vercel → Project Settings → General → **Root Directory**
+   - **Recommended:** Set to **empty** (clear the field) so the repo root `vercel.json` is used
+   - This uses `buildCommand`, `outputDirectory`, and fallback rewrites
+2. **Redeploy:** Deployments → ⋮ → Redeploy
+3. Fallback rewrites serve `index.html` for all non-asset routes (e.g. `/projects/1`, `/runs/57`).
 
 ### CORS errors
 
