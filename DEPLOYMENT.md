@@ -65,13 +65,15 @@ Alternative to Render:
 
 ### 404 on Vercel (SPA routes)
 
-If you get `404: NOT_FOUND` when visiting the app or refreshing:
+If you get `404: NOT_FOUND` on `/` or when visiting the app:
 
 1. **Root Directory:** Vercel → Project Settings → General → **Root Directory**
-   - **Recommended:** Set to **empty** (clear the field) so the repo root `vercel.json` is used
-   - This uses `buildCommand`, `outputDirectory`, and fallback rewrites
-2. **Redeploy:** Deployments → ⋮ → Redeploy
-3. Fallback rewrites serve `index.html` for all non-asset routes (e.g. `/projects/1`, `/runs/57`).
+   - **Must be empty** (clear the field completely)
+   - If set to `frontend`, the root `package.json` and `vercel.json` won't be used
+   - With root empty, the build uses `package.json` (build script) and `vercel.json` (output: `frontend/dist`)
+2. **Framework Preset:** Set to **Other** (or leave default) – don't force Vite
+3. **Redeploy:** Deployments → ⋮ → Redeploy (do this after changing Root Directory)
+4. Check the build logs – the build should run `npm run build` and produce `frontend/dist`.
 
 ### CORS errors
 
